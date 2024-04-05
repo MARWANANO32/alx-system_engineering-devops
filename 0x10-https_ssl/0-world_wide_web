@@ -2,16 +2,18 @@
 # shellcheck disable=SC2086
 # display information about subdomains
 
-print_dns_info() {
-	local SUB_DOMAIN="$1"
-	local RECORD_TYPE="$2"
-	local DESTINATION="$3"
-
-	echo "The subdomain $SUB_DOMAIN is a $RECORD_TYPE record and points to $DESTINATION"
+print_dns_info() 
+{
+  local SUB_DOMAIN="$1"
+  local RECORD_TYPE="$2"
+  local DESTINATION="$3"
+  
+  echo "The subdomain $SUB_DOMAIN is a $RECORD_TYPE record and points to $DESTINATION"
 }
-dig_domain() {
-	local SUB_DOMAIN="$1"
-	local DOMAIN="$2"
+dig_domain() 
+{
+  local SUB_DOMAIN="$1"
+  local DOMAIN="$2"
 
 	dig_ouput=$(dig "$SUB_DOMAIN.$DOMAIN" | grep -A1 "ANSWER SECTION" | tail -n 1)
 	record=$(echo "$dig_ouput" | awk '{print $4}')
