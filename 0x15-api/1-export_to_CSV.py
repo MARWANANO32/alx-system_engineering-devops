@@ -13,5 +13,6 @@ if __name__ == "__main__":
 
     with open("{}.csv".format(usr_id), "w") as csvfile:
         writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
-        [writer.writerow([usr_id, username, t.get("completed"), t.get("title")])
+        [writer.writerow(
+            [usr_id, username, t.get("completed"), t.get("title")])
          for t in todos]
