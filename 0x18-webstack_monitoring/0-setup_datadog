@@ -1,0 +1,11 @@
+init_config:
+
+instances:
+    - name:dfb4d2bf666e@dfb4d2bf666e.428f11f9.alx-cod.online
+
+      search_string: ['dfb4d2bf666e@dfb4d2bf666e.428f11f9.alx-cod.online
+', 'sshd']
+    - name: postgres
+      search_string: ['postgres']
+    - name: nodeserver
+      search_string: ['node server.js']
